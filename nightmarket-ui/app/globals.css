@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Crimson+Text:ital@0;1&display=swap');
+@import "tailwindcss";
+@import "./rainbowkit-overrides.css";
+
+/* Nightmarket Theme - Dark, Minimal, Anonymous */
+:root {
+  /* Night Colors */
+  --void-black: #000000;
+  --night-black: #0a0a0a;
+  --shadow-gray: #1a1a1a;
+  --ash-gray: #2a2a2a;
+  --ghost-gray: #666666;
+  --whisper-gray: #999999;
+  --death-white: #FFFFFF;
+
+  /* Accent - Moonlight Blue */
+  --moonlight: #6b8cff;
+  --moonlight-dim: #4a6bcc;
+
+  /* Semantic */
+  --background: var(--void-black);
+  --foreground: var(--death-white);
+  --surface: var(--night-black);
+  --border: var(--shadow-gray);
+
+  /* Fonts */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Crimson Text', Georgia, serif;
+  --font-mono: 'Courier New', Consolas, monospace;
+
+  /* Timing */
+  --night-duration: 1500ms;
+  --fade-curve: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-moonlight: var(--moonlight);
+}
+
+/* Base Styles */
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.text-shadow {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Animations */
+@keyframes shadowFade {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes nightPulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes moonGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(107, 140, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(107, 140, 255, 0.4);
+  }
+}
+
+@keyframes emerge {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+.animate-shadow-fade {
+  animation: shadowFade 1s var(--fade-curve);
+}
+
+.animate-night-pulse {
+  animation: nightPulse 3s ease-in-out infinite;
+}
+
+.animate-moon-glow {
+  animation: moonGlow 2s ease-in-out infinite;
+}
+
+.animate-emerge {
+  animation: emerge 800ms var(--fade-curve);
+}
+
+/* Glass Morphism */
+.glass {
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-strong {
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Shadows */
+.shadow-night {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.shadow-moonlight {
+  box-shadow: 0 0 20px rgba(107, 140, 255, 0.15);
+}
+
+/* Borders */
+.border-night {
+  border-color: var(--shadow-gray);
+}
+
+.border-moonlight {
+  border-color: var(--moonlight-dim);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--void-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--shadow-gray);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ash-gray);
+}
+
+/* Utility Classes */
+.transition-night {
+  transition: all var(--night-duration) var(--fade-curve);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Time Indicator */
+.time-restricted {
+  position: relative;
+}
+
+.time-restricted::after {
+  content: '2:00-5:00 AM';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  font-size: 0.6rem;
+  opacity: 0.4;
+  font-family: var(--font-mono);
+}

@@ -1,0 +1,19 @@
+{
+  "name": "nightmarket-circuits",
+  "version": "0.1.0",
+  "description": "Zero-knowledge circuits for Nightmarket privacy features",
+  "type": "module",
+  "scripts": {
+    "compile": "bash compile_circuits.sh",
+    "setup": "bash setup_circuits.sh",
+    "test": "node test_circuits.js"
+  },
+  "dependencies": {
+    "circomlib": "^2.0.5",
+    "snarkjs": "^0.7.5",
+    "ffjavascript": "^0.3.0"
+  },
+  "devDependencies": {
+    "circom_tester": "^0.0.19"
+  }
+}

@@ -1,0 +1,13 @@
+[package]
+name = "nightmarket-shared"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "nightmarket_shared"
+path = "src/lib.rs"
+
+[dependencies]
+polkavm-derive = { workspace = true }
+ethabi = { workspace = true }
+uapi = { workspace = true }

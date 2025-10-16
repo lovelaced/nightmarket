@@ -1,0 +1,18 @@
+# Build artifacts
+build/
+*.r1cs
+*.wasm
+*.zkey
+*.sym
+
+# Powers of Tau files
+*.ptau
+
+# Node
+node_modules/
+package-lock.json
+
+# Generated files
+*_vkey.json
+*_verifier.sol
+*_vk_hash.txt

@@ -1,0 +1,62 @@
+# Rust
+/target/
+**/*.rs.bk
+Cargo.lock
+
+# PolkaVM build artifacts
+/build/
+*.polkavm
+
+# Environment and secrets
+.env
+.env.local
+*.key
+*.pem
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Deployment artifacts
+deployments/
+*.json.bak
+nightmarket_deployment.json
+
+# Node (for deployment scripts)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Test artifacts
+test-results/
+coverage/
+
+# Documentation (exclude all .md except README.md)
+*.md
+!README.md
+
+# Frontend specific
+nightmarket-ui/.next/
+nightmarket-ui/out/
+nightmarket-ui/.env.local
+nightmarket-ui/.env*.local
+nightmarket-ui/.vercel
+
+# Circuit artifacts
+circuits/build/
+circuits/node_modules/
+circuits/*.ptau
+circuits/*.r1cs
+circuits/*.sym
+circuits/*.zkey
+circuits/*.wasm
+
+# Backup files
+*.bak

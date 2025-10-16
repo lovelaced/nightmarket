@@ -1,0 +1,108 @@
+/* RainbowKit Custom Theming for Nightmarket - Minimal Dark */
+
+/* Hide ONLY user avatar - not wallet icons or buttons */
+[data-rk] img[alt="Avatar"],
+[data-rk] div[aria-label*="Avatar"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Hide the avatar container specifically */
+[data-rk] > button > div:first-child > div:first-child {
+  display: none !important;
+}
+
+/* Modal backdrop */
+[data-rk] [role="dialog"] {
+  background: rgba(0, 0, 0, 0.98) !important;
+}
+
+/* Modal container */
+[data-rk] > div > div {
+  background: #000000 !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: 0 !important;
+}
+
+/* Wallet buttons in modal */
+[data-rk] button[data-testid^="rk-wallet-option"] {
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: 0 !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.05em !important;
+  transition: all 0.3s ease !important;
+}
+
+[data-rk] button[data-testid^="rk-wallet-option"]:hover {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border-color: rgba(107, 140, 255, 0.2) !important;
+}
+
+/* Modal headings */
+[data-rk] h1,
+[data-rk] h2 {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 200 !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  font-size: 14px !important;
+}
+
+/* All buttons in modal */
+[data-rk] button {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.05em !important;
+  border-radius: 0 !important;
+}
+
+/* Remove all rounded corners */
+[data-rk] * {
+  border-radius: 0 !important;
+}
+
+/* Scrollbar */
+[data-rk] ::-webkit-scrollbar {
+  width: 4px;
+}
+
+[data-rk] ::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+[data-rk] ::-webkit-scrollbar-thumb {
+  background: #1a1a1a;
+}
+
+[data-rk] ::-webkit-scrollbar-thumb:hover {
+  background: #2a2a2a;
+}
+
+/* Account modal styling */
+[data-rk] [data-testid="rk-account-button"] {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Chain selector */
+[data-rk] [data-testid="rk-chain-button"] {
+  background: transparent !important;
+}
+
+/* Keep wallet and chain icons visible - they're functional */
+
+/* Target the specific avatar in account modal - inspect element shows this */
+[data-rk] button[aria-label*="Disconnect"] ~ div img,
+[data-rk] [class*="Avatar"] {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+}
+
+/* Hide avatar container in account info */
+[data-rk] [class*="accountInfo"] > div:first-child {
+  display: none !important;
+}

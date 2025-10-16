@@ -1,0 +1,15 @@
+[package]
+name = "nightmarket-reputation"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "nightmarket_reputation"
+path = "src/main.rs"
+
+[dependencies]
+polkavm-derive = { workspace = true }
+simplealloc = { workspace = true }
+ethabi = { workspace = true }
+uapi = { workspace = true }
+nightmarket-shared = { path = "../../shared" }

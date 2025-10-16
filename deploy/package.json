@@ -1,0 +1,16 @@
+{
+  "name": "nightmarket-deployment",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "deploy:all": "tsx deploy_all.ts"
+  },
+  "dependencies": {
+    "ethers": "^6.15.0",
+    "dotenv": "^17.2.2"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.0",
+    "@types/node": "^20.0.0"
+  }
+}

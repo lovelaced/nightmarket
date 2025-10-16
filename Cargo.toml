@@ -1,0 +1,28 @@
+[workspace]
+resolver = "2"
+members = [
+    "shared",
+    "contracts/nightmarket-zones",
+    "contracts/nightmarket-listings",
+    "contracts/nightmarket-escrow",
+    "contracts/nightmarket-mixer",
+    "contracts/nightmarket-reputation",
+]
+
+[workspace.dependencies]
+polkavm-derive = { version = "=0.25.0" }
+simplealloc = { version = "0.0.1", git = "https://github.com/paritytech/polkavm.git" }
+ethabi = { version = "18.0", default-features = false }
+
+[workspace.dependencies.uapi]
+package = "pallet-revive-uapi"
+git = "https://github.com/paritytech/polkadot-sdk.git"
+default-features = false
+features = ["unstable-hostfn"]
+
+[profile.release]
+opt-level = "s"          # Optimize for size
+lto = "fat"              # Link-time optimization
+codegen-units = 1        # Single codegen unit for better optimization
+panic = "abort"          # Panic strategy
+strip = true             # Strip symbols

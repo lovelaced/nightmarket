@@ -1,0 +1,44 @@
+{
+  "name": "nightmarket-ui",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "deploy": "./deploy.sh",
+    "deploy:prod": "./deploy.sh --production",
+    "vercel": "vercel",
+    "vercel:prod": "vercel --prod"
+  },
+  "dependencies": {
+    "@rainbow-me/rainbowkit": "^2.2.8",
+    "@tanstack/react-query": "^5.89.0",
+    "circomlibjs": "^0.1.7",
+    "ethers": "^6.15.0",
+    "next": "15.5.3",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "snarkjs": "^0.7.5",
+    "viem": "^2.37.6",
+    "wagmi": "^2.16.9"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.3",
+    "postcss": "^8",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "optionalDependencies": {
+    "encoding": "^0.1.13",
+    "pino-pretty": "^13.1.2"
+  }
+}
